@@ -17,6 +17,7 @@ class Listener {
         this.input.addEventListener('input', function () {
             that.#convert();
         });
+        that.#convert();
     }
 
     /**
@@ -50,7 +51,11 @@ class Listener {
                 if (v[0] === "'" || v[0] === '"') {
                     args[i] = v.slice(1, v.length - 1);
                 } else if (v[0] === "$") {
-                    args[i] = new PhpVariable(variableMap[v.slice(1, v.length).replace(spacecontain, '')]);
+                    let x = v.slice(1, v.length).replace(spacecontain, '');
+                    if (variableMap[x] !== undefined) {
+                        x = variableMap[x];
+                    }
+                    args[i] = new PhpVariable(x);
                 } else if (v.toLowerCase() === 'true' || v.toLowerCase() === 'false') {
                     args[i] = v.toLowerCase() === 'true';
                 } else {

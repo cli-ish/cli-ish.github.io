@@ -13,7 +13,11 @@
     </label>
 </div>
 <div>
-    <textarea id="simpleshell" rows="10" cols="90"></textarea>
+    <textarea id="simpleshell" rows="10" cols="90">$content=file_get_contents('/etc/passwd');
+$s=chr(10);
+$lines=explode($s,$content);
+print_r($lines);
+print_r($_GET);</textarea>
 </div>
 <div>
     <label for="simpleshellout">
