@@ -13,11 +13,12 @@
     </label>
 </div>
 <div>
-    <textarea id="simpleshell" rows="10" cols="90">$content=file_get_contents('/etc/passwd');
-$s=chr(10);
-$lines=explode($s,$content);
-print_r($lines);
-print_r($_GET);</textarea>
+    <textarea id="simpleshell" rows="10" cols="90"></textarea>
+</div>
+<div>
+    <button id="preset-0" data-preset="0">Simple dropper</button>
+    <button id="preset-1" data-preset="1">Reverse shell</button>
+    <button id="preset-2" data-preset="2">Shell runner</button>
 </div>
 <div>
     <label for="simpleshellout">
